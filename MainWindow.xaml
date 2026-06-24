@@ -34,7 +34,7 @@
                     </Grid.ColumnDefinitions>
 
                     <ScrollViewer Grid.Column="0" Margin="10">
-                        <StackPanel x:Name="PluginRackPanel" Background="#252526"/>
+                        <StackPanel x:Name="PluginRackPanel" Background="#252526" Margin="10"/>
                     </ScrollViewer>
 
                     <StackPanel Grid.Column="1" Background="#252526" Margin="10" VerticalAlignment="Top">
@@ -144,7 +144,7 @@
         </TabControl>
 
         <!-- Status Bar -->
-        <StackPanel Grid.Row="2" Background="#252526" Height="30" Orientation="Horizontal" Padding="10,0">
+        <StackPanel Grid.Row="2" Background="#252526" Height="30" Orientation="Horizontal" Margin="10,0">
             <TextBlock Text="Ready" VerticalAlignment="Center" Foreground="#FFFFFF"/>
             <Separator Background="#3E3E42" Width="2" Margin="10,0"/>
             <TextBlock x:Name="StatusText" Text="No devices connected" VerticalAlignment="Center" Foreground="#B4B4B4"/>
