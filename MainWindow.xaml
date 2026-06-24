@@ -17,10 +17,10 @@
 
         <!-- Menu Bar -->
         <StackPanel Grid.Row="0" Background="#252526" Orientation="Horizontal" Height="40">
-            <Button Content="File" Style="{StaticResource MenuButton}" Width="60"/>
-            <Button Content="Edit" Style="{StaticResource MenuButton}" Width="60"/>
-            <Button Content="Tools" Style="{StaticResource MenuButton}" Width="60"/>
-            <Button Content="Help" Style="{StaticResource MenuButton}" Width="60"/>
+            <Button Content="File" Width="60"/>
+            <Button Content="Edit" Width="60"/>
+            <Button Content="Tools" Width="60"/>
+            <Button Content="Help" Width="60"/>
         </StackPanel>
 
         <!-- Main Content -->
