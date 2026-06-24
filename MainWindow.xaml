@@ -17,28 +17,26 @@
 
         <!-- Menu Bar -->
         <StackPanel Grid.Row="0" Background="#252526" Orientation="Horizontal" Height="40">
-            <Button Content="File" Width="60"/>
-            <Button Content="Edit" Width="60"/>
-            <Button Content="Tools" Width="60"/>
-            <Button Content="Help" Width="60"/>
+            <Button Content="File" Width="60" Background="Transparent" Foreground="#CCCCCC"/>
+            <Button Content="Edit" Width="60" Background="Transparent" Foreground="#CCCCCC"/>
+            <Button Content="Tools" Width="60" Background="Transparent" Foreground="#CCCCCC"/>
+            <Button Content="Help" Width="60" Background="Transparent" Foreground="#CCCCCC"/>
         </StackPanel>
 
         <!-- Main Content -->
         <TabControl Grid.Row="1" Background="#252526" Foreground="#FFFFFF">
             <!-- Plugin Rack Tab -->
-            <TabItem Header="Plugin Rack" Background="#2D2D30">
+            <TabItem Header="Plugin Rack">
                 <Grid Background="#1E1E1E">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- Plugin List -->
                     <ScrollViewer Grid.Column="0" Margin="10">
-                        <StackPanel x:Name="PluginRackPanel" Background="#252526" Padding="10"/>
+                        <StackPanel x:Name="PluginRackPanel" Background="#252526"/>
                     </ScrollViewer>
 
-                    <!-- Plugin Browser -->
                     <StackPanel Grid.Column="1" Background="#252526" Margin="10" VerticalAlignment="Top">
                         <TextBlock Text="Available Plugins" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
                         <ListBox x:Name="AvailablePluginsList" Height="300" Background="#1E1E1E" Foreground="#FFFFFF"/>
@@ -49,20 +47,14 @@
             </TabItem>
 
             <!-- MIDI Setup Tab -->
-            <TabItem Header="MIDI Setup" Background="#2D2D30">
+            <TabItem Header="MIDI Setup">
                 <Grid Background="#1E1E1E" Margin="20">
                     <StackPanel VerticalAlignment="Top">
                         <TextBlock Text="MIDI Input Device" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <ComboBox x:Name="MidiDeviceComboBox" Height="35" Margin="0,0,0,20"/>
+                        <ComboBox x:Name="MidiDeviceComboBox" Height="35" Margin="0,0,0,20" Background="#252526" Foreground="#FFFFFF"/>
                         
                         <TextBlock Text="MIDI Mappings" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <DataGrid x:Name="MidiMappingsGrid" Height="300" Background="#252526" Foreground="#FFFFFF" Margin="0,0,0,20">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="MIDI CC" Binding="{Binding MidiCC}" Width="*"/>
-                                <DataGridTextColumn Header="Target Plugin" Binding="{Binding TargetPlugin}" Width="*"/>
-                                <DataGridTextColumn Header="Parameter" Binding="{Binding TargetParameter}" Width="*"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
+                        <DataGrid x:Name="MidiMappingsGrid" Height="300" Background="#252526" Foreground="#FFFFFF" Margin="0,0,0,20"/>
 
                         <Button Content="Add Mapping" Padding="10" Click="AddMidiMapping_Click" Background="#007ACC" Foreground="White" Width="150"/>
                     </StackPanel>
@@ -70,14 +62,13 @@
             </TabItem>
 
             <!-- Setlist Management Tab -->
-            <TabItem Header="Setlists" Background="#2D2D30">
+            <TabItem Header="Setlists">
                 <Grid Background="#1E1E1E" Margin="20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- Setlist List -->
                     <StackPanel Grid.Column="0" VerticalAlignment="Top">
                         <TextBlock Text="Your Setlists" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
                         <ListBox x:Name="SetlistBox" Height="400" Background="#252526" Foreground="#FFFFFF"/>
@@ -85,7 +76,6 @@
                         <Button Content="Delete" Padding="10" Click="DeleteSetlist_Click" Background="#D13438" Foreground="White"/>
                     </StackPanel>
 
-                    <!-- Setlist Details -->
                     <StackPanel Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Top">
                         <TextBlock x:Name="SetlistNameText" Text="No Setlist Selected" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
                         <TextBlock Text="Slots" FontSize="12" FontWeight="Bold" Margin="0,0,0,10"/>
@@ -95,7 +85,7 @@
             </TabItem>
 
             <!-- Performance Monitor Tab -->
-            <TabItem Header="Monitor" Background="#2D2D30">
+            <TabItem Header="Monitor">
                 <Grid Background="#1E1E1E" Margin="20">
                     <StackPanel VerticalAlignment="Top">
                         <TextBlock Text="Performance Monitor" FontSize="14" FontWeight="Bold" Margin="0,0,0,20"/>
@@ -124,20 +114,20 @@
             </TabItem>
 
             <!-- Settings Tab -->
-            <TabItem Header="Settings" Background="#2D2D30">
+            <TabItem Header="Settings">
                 <ScrollViewer Background="#1E1E1E" Margin="20">
                     <StackPanel VerticalAlignment="Top">
                         <TextBlock Text="Audio Settings" FontSize="14" FontWeight="Bold" Margin="0,0,0,15"/>
                         
                         <TextBlock Text="Sample Rate" FontSize="12" Margin="0,0,0,5"/>
-                        <ComboBox x:Name="SampleRateComboBox" Height="35" Margin="0,0,0,15">
+                        <ComboBox x:Name="SampleRateComboBox" Height="35" Margin="0,0,0,15" Background="#252526" Foreground="#FFFFFF">
                             <ComboBoxItem>44100 Hz</ComboBoxItem>
                             <ComboBoxItem>48000 Hz</ComboBoxItem>
                             <ComboBoxItem>96000 Hz</ComboBoxItem>
                         </ComboBox>
 
                         <TextBlock Text="Buffer Size" FontSize="12" Margin="0,0,0,5"/>
-                        <ComboBox x:Name="BufferSizeComboBox" Height="35" Margin="0,0,0,15">
+                        <ComboBox x:Name="BufferSizeComboBox" Height="35" Margin="0,0,0,15" Background="#252526" Foreground="#FFFFFF">
                             <ComboBoxItem>64</ComboBoxItem>
                             <ComboBoxItem>128</ComboBoxItem>
                             <ComboBoxItem>256</ComboBoxItem>
@@ -145,7 +135,7 @@
                         </ComboBox>
 
                         <TextBlock Text="Output Device" FontSize="12" Margin="0,0,0,5"/>
-                        <ComboBox x:Name="OutputDeviceComboBox" Height="35" Margin="0,0,0,20"/>
+                        <ComboBox x:Name="OutputDeviceComboBox" Height="35" Margin="0,0,0,20" Background="#252526" Foreground="#FFFFFF"/>
 
                         <Button Content="Apply Settings" Padding="15" Click="ApplySettings_Click" Background="#107C10" Foreground="White" Width="150"/>
                     </StackPanel>
@@ -160,20 +150,4 @@
             <TextBlock x:Name="StatusText" Text="No devices connected" VerticalAlignment="Center" Foreground="#B4B4B4"/>
         </StackPanel>
     </Grid>
-
-    <Window.Resources>
-        <Style x:Key="MenuButton" TargetType="Button">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#CCCCCC"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Padding" Value="10,0"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#3E3E42"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
 </Window>
